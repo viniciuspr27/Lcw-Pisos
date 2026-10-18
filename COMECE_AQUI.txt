@@ -1,0 +1,18 @@
+LCW PISOS — ABRIR NO VS CODE
+
+1. Extraia TODO o ZIP.
+2. Abra a pasta lcw-pisos no VS Code (Arquivo > Abrir Pasta).
+3. Abra index.html.
+4. Instale a extensão Live Server, de Ritwick Dey, se ainda não tiver.
+5. Clique com o botão direito em index.html > Open with Live Server.
+
+Para visualizar sem extensão, dê dois cliques em index.html no Explorador de Arquivos.
+Não precisa de npm nem de instalar pacotes.
+
+Textos e estrutura: index.html
+Aparência e responsividade: assets/css/styles.css
+Interações e WhatsApp: assets/js/main.js
+Fotos demonstrativas: assets/images/
+
+Para mais detalhes, leia README.md.
+Projeto não publicado.

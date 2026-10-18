@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-16T12:47:09.179Z",
+  "version": "HTML independente",
+  "method": "Testes de integração de DOM com JSDOM; sem navegador e sem envio real ao WhatsApp",
+  "checks": [
+    {
+      "name": "Inicialização sem exceções e conteúdo acessível sem IntersectionObserver",
+      "status": "passed"
+    },
+    {
+      "name": "Seis serviços com painel exclusivo, imagem e navegação por teclado",
+      "status": "passed"
+    },
+    {
+      "name": "Filtros reais e ampliação limitada ao filtro ativo",
+      "status": "passed"
+    },
+    {
+      "name": "Comparador: posição arbitrária, atalhos e informação para leitores de tela",
+      "status": "passed"
+    },
+    {
+      "name": "Menu de celular, Escape e privacidade com abertura e fechamento",
+      "status": "passed"
+    },
+    {
+      "name": "Orçamento bloqueia serviço vazio, cidade vazia e metragem inválida",
+      "status": "passed"
+    },
+    {
+      "name": "Orçamento aceita área desconhecida e exige nome antes do WhatsApp",
+      "status": "passed"
+    },
+    {
+      "name": "Mensagem correta, texto seguro e abertura apenas por ação explícita",
+      "status": "passed"
+    },
+    {
+      "name": "Copiar mensagem e preservação dos campos ao voltar",
+      "status": "passed"
+    },
+    {
+      "name": "Trocar serviço atualiza perguntas e mensagem; área decimal em português",
+      "status": "passed"
+    },
+    {
+      "name": "SEO da POC, estrutura, links internos e imagens demonstrativas",
+      "status": "passed"
+    },
+    {
+      "name": "Todos os arquivos estáticos e fontes estão presentes",
+      "status": "passed"
+    }
+  ],
+  "browserVisualQA": "Não executado: skill control-browser indisponível neste ambiente. Não houve servidor nem publicação."
+}
