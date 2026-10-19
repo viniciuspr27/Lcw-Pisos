@@ -1,0 +1,18 @@
+/* Arraste na imagem, mantendo gesto vertical e zoom do navegador. */
+.comparison {
+  touch-action: pan-y pinch-zoom;
+  cursor: ew-resize;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.comparison #compare-range { pointer-events: none; }
+.comparison > img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.comparison.is-dragging { cursor: grabbing; }
+.service-choices .choice > span { min-height: 49px; line-height: 1.5; }
+@media (max-width: 420px) {
+  .service-choices .choice > span { min-height: 51px; font-size: 10px; }
+}

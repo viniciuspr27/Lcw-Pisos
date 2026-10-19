@@ -14,6 +14,7 @@
     decks: { name: 'Decks de madeira', image: 'assets/images/deck.webp', caption: 'A natureza continua aqui.', alt: 'Exemplo demonstrativo de deck de madeira junto a uma piscina', index: '06', context: 'Você quer um deck novo ou renovar o existente? Vamos entender sua ideia.' },
     orientacao: { name: 'Preciso de orientação', context: 'Tudo bem ter dúvidas. Descreva seu ambiente e converse com a equipe.' }
   };
+  Object.assign(serviceData, window.LCWQuoteUpgrade?.services || {});
   const projects = [
     { image: 'assets/images/living-room.webp', title: 'Restaurar a beleza natural.', category: 'RESTAURAÇÃO / INTERIORES', service: 'restauracao', alt: 'Sala com piso de madeira em espinha de peixe. Referência ilustrativa de ambiente.', description: 'Uma referência de como a madeira e a luz podem valorizar um espaço. A viabilidade de restauração depende da avaliação do piso.' },
     { image: 'assets/images/reading-room.webp', title: 'Desenhos que valorizam.', category: 'INSTALAÇÃO / INTERIORES', service: 'instalacao', alt: 'Sala de leitura com piso de madeira em desenho chevron. Referência ilustrativa de ambiente.', description: 'A textura e a paginação da madeira ajudam a criar a atmosfera do ambiente. O material e o desenho são definidos para cada projeto.' },
@@ -207,13 +208,15 @@
     decks: { label: 'O que você precisa no deck?', options: ['Instalar um deck novo', 'Restaurar um deck existente', 'Limpeza ou manutenção do deck', 'Preciso de uma avaliação'] },
     limpeza: { label: 'Qual é a necessidade de limpeza?', options: ['Sujeira do uso diário', 'Limpeza após obra', 'Manchas para avaliar', 'Preciso de orientação'] }
   };
+  Object.assign(conditionSets, window.LCWQuoteUpgrade?.conditionSets || {});
+  const deckServices = new Set(window.LCWQuoteUpgrade?.deckServices || ['decks']);
   function selectedService() { return $('input[name="service"]:checked', form)?.value || ''; }
   function updateServiceContext() {
     const key = selectedService();
     $('#service-context').textContent = serviceData[key]?.context || 'Escolha um serviço para personalizar seu pedido.';
     if (key !== lastService) {
-      if (key === 'decks') $('#material').value = 'Deck de madeira';
-      else if (lastService === 'decks' && $('#material').value === 'Deck de madeira') $('#material').value = '';
+      if (deckServices.has(key)) $('#material').value = 'Deck de madeira';
+      else if (deckServices.has(lastService) && $('#material').value === 'Deck de madeira') $('#material').value = '';
       const config = conditionSets[key] || conditionSets.common;
       const select = $('#condition');
       const previous = select.value;
@@ -232,6 +235,7 @@
     const key = selectedService();
     const area = $('#area').value;
     return {
+      serviceKey: key,
       service: serviceData[key]?.name || 'A definir',
       material: $('#material').value || 'A confirmar',
       city: $('#city').value.trim(), district: $('#district').value.trim(),
@@ -242,6 +246,7 @@
     };
   }
   function message(data) {
+    if (window.LCWQuoteUpgrade) return window.LCWQuoteUpgrade.message(data);
     const location = (data.city || 'Cidade a confirmar') + (data.district ? ' — ' + data.district : '');
     return 'Olá, LCW Pisos!' + (data.name ? ' Meu nome é ' + data.name + '.' : '') + '\n\nGostaria de conversar sobre este projeto:\n\n' +
       '• Serviço: ' + data.service + '\n• Tipo de piso: ' + data.material + '\n• Local: ' + location + '\n• Ambiente: ' + data.property + '\n• Área aproximada: ' + data.area + '\n• Situação: ' + data.condition + '\n• Previsão: ' + data.timing +
