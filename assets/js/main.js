@@ -15,9 +15,9 @@
     orientacao: { name: 'Preciso de orientação', context: 'Tudo bem ter dúvidas. Descreva seu ambiente e converse com a equipe.' }
   };
   const projects = [
-    { image: 'assets/images/living-room.webp', title: 'Restaurar a beleza natural.', category: 'RESTAURAÇÃO / INTERIORES', service: 'restauracao', alt: 'Sala com piso de madeira em espinha de peixe. Referência demonstrativa gerada por IA.', description: 'Uma referência de como a madeira e a luz podem valorizar um espaço. A viabilidade de restauração depende da avaliação do piso.' },
-    { image: 'assets/images/reading-room.webp', title: 'Desenhos que valorizam.', category: 'INSTALAÇÃO / INTERIORES', service: 'instalacao', alt: 'Sala de leitura com piso de madeira em desenho chevron. Referência demonstrativa gerada por IA.', description: 'A textura e a paginação da madeira ajudam a criar a atmosfera do ambiente. O material e o desenho são definidos para cada projeto.' },
-    { image: 'assets/images/deck.webp', title: 'Natureza em continuidade.', category: 'DECKS / ÁREAS EXTERNAS', service: 'decks', alt: 'Deck de madeira junto a uma piscina e jardim tropical. Referência demonstrativa gerada por IA.', description: 'Uma possibilidade de integração entre arquitetura e área externa. Conte à LCW se você quer instalar um deck ou cuidar do existente.' }
+    { image: 'assets/images/living-room.webp', title: 'Restaurar a beleza natural.', category: 'RESTAURAÇÃO / INTERIORES', service: 'restauracao', alt: 'Sala com piso de madeira em espinha de peixe. Referência ilustrativa de ambiente.', description: 'Uma referência de como a madeira e a luz podem valorizar um espaço. A viabilidade de restauração depende da avaliação do piso.' },
+    { image: 'assets/images/reading-room.webp', title: 'Desenhos que valorizam.', category: 'INSTALAÇÃO / INTERIORES', service: 'instalacao', alt: 'Sala de leitura com piso de madeira em desenho chevron. Referência ilustrativa de ambiente.', description: 'A textura e a paginação da madeira ajudam a criar a atmosfera do ambiente. O material e o desenho são definidos para cada projeto.' },
+    { image: 'assets/images/deck.webp', title: 'Natureza em continuidade.', category: 'DECKS / ÁREAS EXTERNAS', service: 'decks', alt: 'Deck de madeira junto a uma piscina e jardim tropical. Referência ilustrativa de ambiente.', description: 'Uma possibilidade de integração entre arquitetura e área externa. Conte à LCW se você quer instalar um deck ou cuidar do existente.' }
   ];
 
   // Navegação responsiva.
@@ -351,6 +351,12 @@
     notify('O texto está selecionado. Use a opção Copiar do seu dispositivo.');
   });
 
+  // Dicas: conserva a interação nativa de details e uma orientação aberta por vez.
+  const careItems = $$('.care-list details');
+  careItems.forEach(item => item.addEventListener('toggle', () => {
+    if (item.open) careItems.forEach(other => { if (other !== item) other.open = false; });
+  }));
+
   // Perguntas: mantém uma resposta aberta por vez.
   const faqItems = $$('.faq-list details');
   faqItems.forEach(item => item.addEventListener('toggle', () => { if (item.open) faqItems.forEach(other => { if (other !== item) other.open = false; }); }));
@@ -362,7 +368,7 @@
     header.classList.toggle('scrolled', position > 35);
     const max = document.documentElement.scrollHeight - window.innerHeight;
     $('.scroll-progress').style.width = (max > 0 ? Math.min(100, position / max * 100) : 0) + '%';
-    if (!reducedMotion && position < $('.hero').offsetHeight + 100) $('.hero-image').style.setProperty('--hero-y', Math.min(45, position * .065) + 'px');
+    if (!reducedMotion && position < $('.hero').offsetHeight + 100) $('.hero-image').style.setProperty('--hero-y', Math.min(22, position * .035) + 'px');
     scrollPending = false;
   }
   window.addEventListener('scroll', () => { if (!scrollPending) { scrollPending = true; window.requestAnimationFrame(syncScroll); } }, { passive: true });
@@ -377,7 +383,7 @@
       if (!entry.isIntersecting) return;
       $$('.desktop-nav a').forEach(link => { if (link.hash === '#' + entry.target.id) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
     }), { rootMargin: '-15% 0px -65% 0px', threshold: 0 });
-    ['servicos', 'projetos', 'transformacao', 'sobre'].forEach(id => navigationObserver.observe(document.getElementById(id)));
+    ['servicos', 'projetos', 'experiencia', 'cuidados'].forEach(id => navigationObserver.observe(document.getElementById(id)));
   }
   updateServiceContext(); updateSummary(); updateComparison();
 })();

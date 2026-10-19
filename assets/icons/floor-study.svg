@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" fill="none">
+  <defs><linearGradient id="wood" x1="150" y1="160" x2="520" y2="360" gradientUnits="userSpaceOnUse"><stop stop-color="#bb9365"/><stop offset="1" stop-color="#7d502e"/></linearGradient><linearGradient id="wall" x1="180" y1="70" x2="500" y2="220" gradientUnits="userSpaceOnUse"><stop stop-color="#d5cbb0"/><stop offset="1" stop-color="#9c9b87"/></linearGradient><clipPath id="floor"><path d="m110 240 240-100 240 100-240 110Z"/></clipPath></defs>
+  <ellipse cx="350" cy="330" rx="220" ry="42" fill="#090f09" opacity=".35"/>
+  <path d="m110 240 240 110 240-110v15L350 365 110 255Z" fill="#5f5440"/>
+  <path d="M110 240V130L350 30v110Z" fill="#929581"/><path d="M350 30 590 130v110L350 140Z" fill="url(#wall)"/>
+  <path d="m390 70 155 65v63l-155-65Z" fill="#748572" stroke="#485b49" stroke-width="4"/><path d="M468 103v63" stroke="#485b49" stroke-width="4"/>
+  <path d="m110 240 240-100 240 100-240 110Z" fill="url(#wood)"/>
+  <g clip-path="url(#floor)" stroke="#4f351e" stroke-width="1.5" opacity=".65"><path d="m130 249 240-100m-216 111 240-100m-216 111 240-100m-216 111 240-100m-216 111 240-100m-216 111 240-100m-216 111 240-100m-216 111 240-100m-216 111 240-100"/><path d="m190 205 240 110m-160-143 240 110"/></g>
+  <path d="m365 169 140 59-69 30-139-61Z" fill="#ffe7b3" opacity=".12"/>
+  <path d="m110 240 240 110 240-110" stroke="#e1c597" stroke-opacity=".3"/>
+</svg>

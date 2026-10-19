@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-19T00:12:05.568Z",
+  "version": "Projeto VS Code com maquete 3D",
+  "method": "Integração com JSDOM e renderização Canvas real em Node. Rolagem testada com geometria simulada; não equivale à conferência visual do layout em navegador.",
+  "checks": [
+    {
+      "name": "Inicialização, CSS reconhecido e ausência de erros de execução",
+      "status": "passed"
+    },
+    {
+      "name": "Versão original recuperada, sem capturas do Instagram e sem rótulos de IA na interface",
+      "status": "passed"
+    },
+    {
+      "name": "Imagens com proporções menores, comparador de 980px e parallax reduzido",
+      "status": "passed"
+    },
+    {
+      "name": "Geometria: 35 réguas distintas, instalação progressiva e estados finais completos",
+      "status": "passed"
+    },
+    {
+      "name": "Renderização real da maquete em diferentes tamanhos e fases, sem valores inválidos",
+      "status": "passed"
+    },
+    {
+      "name": "Controle manual, botões das etapas e identificação acessível sincronizados",
+      "status": "passed"
+    },
+    {
+      "name": "Rolagem avança e reverte instalação e acabamento, retomando após exploração manual",
+      "status": "passed"
+    },
+    {
+      "name": "Preferência por menos movimento: cena estática, controles disponíveis e rolagem ignorada",
+      "status": "passed"
+    },
+    {
+      "name": "Serviços atualizam imagem, legenda, perguntas e pré-seleção de orçamento",
+      "status": "passed"
+    },
+    {
+      "name": "Dicas expansíveis, orientação de produtos e CTA para restauração",
+      "status": "passed"
+    },
+    {
+      "name": "Galeria filtra, amplia e navega pelas referências; CTA mantém o serviço",
+      "status": "passed"
+    },
+    {
+      "name": "Comparador menor mantém arraste, posições rápidas e descrição de porcentagem",
+      "status": "passed"
+    },
+    {
+      "name": "Menu móvel e privacidade com abertura, fechamento e Escape",
+      "status": "passed"
+    },
+    {
+      "name": "Orçamento valida serviço, cidade, metragem e nome antes de preparar a mensagem",
+      "status": "passed"
+    },
+    {
+      "name": "WhatsApp, cópia e fallback corretos; entrada tratada como texto e sem armazenamento",
+      "status": "passed"
+    },
+    {
+      "name": "HTML, fontes, scripts e imagens íntegros; links e IDs válidos",
+      "status": "passed"
+    },
+    {
+      "name": "Fallback sem Canvas e início com movimento reduzido não bloqueiam a página",
+      "status": "passed"
+    }
+  ],
+  "browserVisualQA": "Não executado: control-browser indisponível. Sem servidor, publicação ou envio real ao WhatsApp."
+}
